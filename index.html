@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="EN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bookstore</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+	<div id="app">
+		<!---HOME--->
+
+
+
+		<header>
+			<div class="container">
+				<h1><span></span> Igor's Bookstore</h1>
+				<div class="search">
+					<h5>Search by title <span class="glyphicon glyphicon-search"></span></h5>
+					<input v-model="search" placeholder="Search..">
+				</div>
+				<!--- Filter --->
+				<div class="container" id="people">
+	<div class="filter">
+		<select model="selectedCategory">
+			<option value="ALL">
+				ALL
+			</option>
+		</select>
+	</div>
+	
+</div>
+				
+			</div>
+			<hr class="style133">
+			<ul id="slides">
+				<li class="slide showing"></li>
+				<li class="slide"></li>
+				<li class="slide"></li>
+				<li class="slide"></li>
+				<li class="slide"></li>
+			</ul>
+			<hr class="style14">
+		</header>
+		<main>
+
+			<div id="header">
+				<ul id=top_menu>
+					<li><a href="#" @click.prevent="page = 'home'">Home</a></li>
+					<li><a href="#" @click.prevent="getFreeBooks();page = 'cart'">Cart</a></li>
+				</ul>
+				<!----  
+				<div data-role="main" class="ui-content">
+    <form method="post" action="/action_page_post.php">
+      <div v-for="price in books" data-role="rangeslider">
+        <label for="price-min">{{value}}</label>
+        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+        <label for="price-max">{{value}}</label>
+        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+      </div>
+        <input type="submit" data-inline="true" value="Submit">
+      </form>
+  </div>
+ -->
+		
+
+  <div id="slider-range"></div>
+			</div>
+			<div id="home" v-if="page === 'home'">
+				<h1>Books</h1>
+				<div id="content">
+					<div v-for="book in filteredArray" class="flip-card" id="card">
+						<div class="flip-card-inner" id="cardInner">
+							<div class="flip-card-front" id="cardFront">
+								<img style="width:200px;height:250px" v-bind:src="book.cover">
+							</div>
+							<div class="flip-card-back" id="cardBack">
+								<div @click.prevent="bookSelect('product',book)">
+									<p>{{book.title}}</p>
+									<p>Author: {{book.author}}</p>
+									<p>{{book.ratting}} liked this book</p>
+									<p>Published: {{book.published}}</p>
+									<p>Price: EUR {{book.price}}</p>
+								</div>
+
+								<a v-bind:href="book.cover" data-fancybox="images-preview" data-thumbs='{"autoStart":true}' v-bind:data-thumb="book.cover">
+
+									<button type="button" class="btn btn-primary btn-lg btn-block">See image</button>
+								</a>
+								<button type="button" @click="addToCart(book)" class="btn btn-primary btn-lg btn-block">Add to Cart</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+
+
+		<!--- Product page --->
+
+
+
+		<main>
+			<div id="product" v-if="page === 'product'">
+				<h1>Your Book</h1>
+				<div class="grid-container">
+
+					<div class="item2"><img style="width:200px;height:250px" v-bind:src="currentBook.cover">
+						<button type="button" @click="addToCart(currentBook)" class="btn btn-primary btn-lg btn-block">Add to Cart</button></div>
+					<div class="item3">
+						<p>Author: {{currentBook.author}}</p>
+						<p>Title: {{currentBook.title}}</p>
+						<p>Published: {{currentBook.published}}</p>
+					</div>
+					<div class="item4">Price: EUR {{currentBook.price}}</div>
+					<div class="item5">Description: {{currentBook.description}}</div>
+				</div>
+			</div>
+		</main>
+
+		<!--- Cart page--->
+
+
+
+		<main>
+			<div id="cart" v-if="page === 'cart'">
+
+				<h1>Your Cart</h1>
+				<div class="grid-container2">
+					<div>
+						<div v-for="book in selectedBook">
+							<p>Items in cart</p>
+							<p>Item:{{book.title}}</p>
+							<p>Price:{{book.price}}</p>
+							<button type="button" @click="removeElement(book)" class="btn btn-primary btn-lg btn-block">remove</button>
+						</div>
+					</div>
+					<div>
+						<div>
+							<p>Total items in cart</p>
+							<p>{{totalItems}}</p>
+						</div>
+						<div v-for="book in freeBooks">
+							<p>Free items you get</p>
+							<p>{{book.title}}</p>
+						</div>
+						<div>
+							<p>Price with 10% discount for 5 or more items</p>
+							<p>{{discountedPrice}}</p>
+						</div>
+						<!---<div></div>--->
+						<div>
+							<p>Total price before discounts</p>
+							<p>{{total}}</p>
+						</div>
+						<!--	<div>
+						<p>Discount fo free items</p>
+						<p>items</p>
+					</div>--->
+						<div>
+							<p>Total final price</p>
+							<p>{{total}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<hr class="style13">
+			<p>All rights reserved</p>
+		</footer>
+
+	</div>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="index.js"></script>
+
+</body>
+
+</html>

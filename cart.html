@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookstore</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       
+        	<header>
+        	    <div class="container">
+        	        <h1><span></span> Igor's Bookstore</h1>
+        	        <div class="search">
+        	            <h5>Search <span class="glyphicon glyphicon-search"></span></h5>
+        	            <input v-model="search" placeholder="Search..">
+        	        </div>
+        	    </div>
+        	    <hr class="style133">
+        	    <ul id="slides">
+        	        <li class="slide showing"></li>
+        	        <li class="slide"></li>
+        	        <li class="slide"></li>
+        	        <li class="slide"></li>
+        	        <li class="slide"></li>
+        	    </ul>
+        	    <hr class="style14">
+        	</header>
+        	<main>
+        	    <div id="header">
+        	        <ul id=top_menu>
+        	            <li><a href="#">Home</a></li>
+        	            <li><a href="#">Cart</a></li>
+        	            
+        	        </ul>
+        	    </div>
+        	    <h1>Your Cart</h1>
+        	    <div class="grid-container2">
+  <div>
+  	<p>Items in cart</p>
+  	<p>items</p>
+  </div>
+  <div>
+  	<p>Total items in cart</p>
+  	<p>items</p>
+  </div>
+  <div>
+  	<p>Free items you get</p>
+  	<p>items</p>
+  </div>  
+  <div>
+  	<p>10% discount for 5 or more items</p>
+  	<p>items</p>
+  </div>
+  <div>5</div>
+  <div>
+  	<p>Total price before discounts</p>
+  	<p>price</p>
+  </div>
+  <div>
+  	<p>Discount fo free items</p>
+  	<p>items</p>
+  </div>
+  <div>
+  	<p>Total finl price</p>
+  	<p>price</p>
+  </div>
+</div>
+        	</main>
+        	<footer>
+        	    <hr class="style13">
+        	</footer>
+        </div>
+        <!---
+        
+        <div id="product" v-if="page === 'product'"></div>
+        
+        <div id="cart" v-if="page === 'cart'"></div>
+        --->
+        <script src="index.js"></script>
+	
+</body>
+
+</html>

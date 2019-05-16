@@ -1,0 +1,117 @@
+{
+	"books": [
+		{
+			"title": "The Godfather",
+			"category": "Mafia",
+			"cover": "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9780/0995/9780099528128.jpg",
+			"author": "Mario Putzo",
+			"ratting": "95%",
+			"price": "30",
+			"published": "March 10, 1969",
+			"description": "The Godfather is a crime novel written by American author Mario Puzo. Originally published in 1969 by G. P. Putnam's Sons, the novel details the story of a fictional Mafia family based in New York City, headed by Vito Corleone. Puzo's dedication for The Godfather is 'For Anthony Cleri'."
+		},
+		{
+			"title": "The Sicilian",
+			"category": "Criminal",
+			"cover": "https://knigomania.bg/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/t/h/the-sicilian-9780099580799.jpg",
+			"author": "Mario Putzo",
+			"ratting": "98%",
+			"price": "25",
+			"published": "November 1984",
+			"description": "The Sicilian is a novel by Italian-American author Mario Puzo. Published in 1984 by Random House Publishing Group, it is based on Puzo's most famous work, The Godfather. It is regarded as The Godfather's literary sequel."
+		},
+		{
+			"title": "The Last Don",
+			"category": "Mafia",
+			"cover": "https://s.s-bol.com/imgbase0/imagebase3/large/FC/2/4/3/0/1002004000000342.jpg",
+			"author": "Mario Putzo",
+			"ratting": "89%",
+			"price": "20",
+			"published": "1996",
+			"description": "The Last Don is a novel by Mario Puzo, best known as the author of The Godfather. The story alternates between the film industry and the Las Vegas Strip casinos, showing how the Mafia is linked to both."
+		},
+		{
+			"title": "Omertà",
+			"category": "Criminal",
+			"cover": "https://i2.bookpage.com/books/images/1b2a36a0740d913d051c41d2906c602f/large.jpg",
+			"author": "Mario Putzo",
+			"ratting": "93%",
+			"price": "25",
+			"published": "2000",
+			"description": "Omertà is a novel by Mario Puzo, published posthumously in 2000. It was first published by Ballantine Books. Omertà follows the story of Don Aprile's adopted nephew Astorre Viola."
+		},
+		{
+			"title": "Fools Die",
+			"category": "Drama",
+			"cover": "https://img1.od-cdn.com/ImageType-400/0887-1/22A/928/CD/%7B22A928CD-33F7-4B93-AB8B-291820298F3B%7DImg400.jpg",
+			"author": "Mario Putzo",
+			"ratting": "92%",
+			"price": "30",
+			"published": "October 9, 1978",
+			"description": "Fools Die is a 1978 novel by Italian-American author Mario Puzo. Played out in the worlds of gambling, publishing and the film industry, Merlyn and his brother Artie obey their own code of honor in the ferment of contemporary America, where law and organized crime are one and the same."
+		},
+		{
+			"title": "The Fortunate Pilgrim",
+			"category": "Drama",
+			"cover": "https://upload.wikimedia.org/wikipedia/en/e/ea/Fortunate_pilgrim_novel.jpg",
+			"author": "Mario Putzo",
+			"ratting": "89%",
+			"price": "25",
+			"published": "1965",
+			"description": "The Fortunate Pilgrim is a 1965 novel by Mario Puzo. Until his dying day, Mario Puzo considered the novel his finest, most poetic, and literary work."
+		},
+		{
+			"title": "The Dark Arena",
+			"category": "Criminal",
+			"cover": "https://upload.wikimedia.org/wikipedia/en/9/9a/TheDarkArena.jpg",
+			"author": "Mario Putzo",
+			"ratting": "90%",
+			"price": "30",
+			"published": "1965",
+			"description": "The Dark Arena is the first novel by Mario Puzo, published in 1955. The book follows Walter Mosca, an American World War II veteran who returns to Germany for his girlfriend, Hella."
+		},
+		{
+			"title": "The Fourth K",
+			"category": "Drama",
+			"cover": "https://upload.wikimedia.org/wikipedia/en/9/99/TheFourthK-Novel-Cover.JPG",
+			"author": "Mario Putzo",
+			"ratting": "92%",
+			"price": "20",
+			"published": "1990",
+			"description": "The Fourth K is a novel by Mario Puzo, published in 1990. It is set during the Presidency of fictional Francis Xavier Kennedy, nephew of John F. Kennedy, Robert Kennedy and Edward Kennedy."
+		},
+		{
+			"title": "The Family",
+			"category": "Mafia",
+			"cover": "https://upload.wikimedia.org/wikipedia/en/6/61/MarioPuzo_TheFamily.jpg",
+			"author": "Mario Putzo",
+			"ratting": "90%",
+			"price": "15",
+			"published": "October 2001",
+			"description": "The Family is a 2001 novel written by Mario Puzo. The novel is about Pope Alexander VI and his family. Puzo spent over twenty years working on the book off and on, while he wrote others. The novel was finished by his longtime girlfriend, Carol Gino. The Family is effectively his last novel."
+		},
+		{
+			"title": "Six Graves to Munich",
+			"category": "Drama",
+			"cover": "https://i.datapremiery.pl/4/000/15/404/mario-puzo-szesc-grobow-do-monachium-six-graves-to-munich-cover-okladka.jpg",
+			"author": "Mario Putzo",
+			"ratting": "85%",
+			"price": "30",
+			"published": "1967",
+			"description": "In the final days of the Second World War, Michael Rogan, an American intelligence officer, is tortured by a group of seven senior Gestapo officers who need to discover the secrets he alone can give them."
+		}
+
+	],
+
+	"carusel": [
+		{
+"cimg": "https://wallpapercave.com/wp/An4U92t.jpg"
+		},
+		{
+"cimg": "https://cdn2us.denofgeek.com/sites/denofgeekus/files/styles/main_wide/public/7/51/the-godfather.jpg?itok=-T6s1LNH"
+		},
+		{
+"cimg": "https://amazingpict.com/wp-content/uploads/2017/02/The-Godfather-1440-x-900-widescreen.jpeg"
+		}
+	]
+}
